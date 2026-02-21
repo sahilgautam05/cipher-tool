@@ -164,31 +164,7 @@ export function CipherTool() {
     });
   };
 
-  // Real-time preview effect for encryption
-  useEffect(() => {
-    if (plaintext.trim() && encryptShift) {
-      const shift = parseInt(String(encryptShift), 10);
-      if (!isNaN(shift)) {
-        const preview = encrypt(plaintext, shift);
-        setCiphertext(preview);
-      }
-    } else {
-      setCiphertext('');
-    }
-  }, [plaintext, encryptShift]);
 
-  // Real-time preview effect for decryption
-  useEffect(() => {
-    if (decryptCiphertext.trim() && decryptShift) {
-      const shift = parseInt(String(decryptShift), 10);
-      if (!isNaN(shift)) {
-        const preview = decrypt(decryptCiphertext, shift);
-        setDecryptResult(preview);
-      }
-    } else {
-      setDecryptResult('');
-    }
-  }, [decryptCiphertext, decryptShift]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-4 md:p-8">
